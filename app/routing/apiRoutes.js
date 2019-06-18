@@ -1,6 +1,7 @@
 var friends = require("../data/friends");
+var app = require("express").Router();
 
-module.exports = function(app) {
+
   // Return all friends found in friends.js as JSON
   app.get("/api/friends", function(req, res) {
     res.json(friends);
@@ -43,4 +44,6 @@ module.exports = function(app) {
     // send back to browser the best friend match
     res.json(friends[bestFriendIndex]);
   });
-};
+
+
+  module.exports= app;
